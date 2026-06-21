@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #fbf8f3;
+    --ink: #0b1020;
+  }
+  html,
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    font-family: "SF Pro Text", "PingFang SC", "HarmonyOS Sans SC", system-ui,
+      sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "SF Pro Display", "PingFang SC", "HarmonyOS Sans SC", system-ui,
+      sans-serif;
+    letter-spacing: -0.015em;
+  }
+  ::selection {
+    background: rgba(249, 115, 22, 0.15);
+    color: #c2410c;
+  }
+}
+
+@layer components {
+  /* Warm cream aesthetic */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 24px -4px rgba(249, 115, 22, 0.12), 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .glass-deep {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(249, 115, 22, 0.08);
+    box-shadow: 0 2px 12px rgba(249, 115, 22, 0.06);
+  }
+
+  .nav-pill {
+    @apply relative inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-stone-500 transition-all duration-200 hover:text-stone-900;
+  }
+  .nav-pill-active {
+    @apply text-orange-700;
+  }
+  .nav-pill-active::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 4px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #f97316, #fb923c);
+  }
+
+  /* Warm hero gradient text */
+  .ai-gradient {
+    background: linear-gradient(
+      135deg,
+      #c2410c 0%,
+      #ea580c 20%,
+      #f97316 45%,
+      #fb923c 65%,
+      #fbbf24 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Blue for AI-specific sections */
+  .brand-gradient {
+    background: linear-gradient(135deg, #1d4ed8, #3b7bff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Subtle divider */
+  .divider {
+    @apply border-t border-orange-100/60;
+  }
+
+  /* Recharts tooltip */
+  .recharts-tooltip-wrapper .recharts-default-tooltip {
+    border-radius: 16px !important;
+    border: 1px solid rgba(249, 115, 22, 0.1) !important;
+    box-shadow: 0 8px 32px rgba(249, 115, 22, 0.1) !important;
+  }
+
+  /* Risk level badges */
+  .risk-low {
+    @apply bg-emerald-50 text-emerald-700 border-emerald-200;
+  }
+  .risk-medium {
+    @apply bg-amber-50 text-amber-700 border-amber-200;
+  }
+  .risk-high {
+    @apply bg-red-50 text-red-700 border-red-200;
+  }
+
+  /* Chip variants — warm palette */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-orange-200/60 bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700;
+  }
+  .chip-brand {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-blue-200/60 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700;
+  }
+  .chip-warm {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-amber-200/60 bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700;
+  }
+  .chip-emerald {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-emerald-200/60 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:bg-stone-800;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-stone-200 bg-white/80 px-6 py-3 text-sm font-semibold text-stone-700 transition-all duration-200 hover:bg-white hover:shadow-sm;
+  }
+  .btn-warm {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md;
+  }
+  .btn-blue {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-700;
+  }
+
+  /* Stat numbers */
+  .stat-number {
+    @apply text-4xl font-bold tracking-tight text-stone-900;
+  }
+  .stat-number-lg {
+    @apply text-6xl font-bold tracking-tight text-stone-900;
+  }
+
+  /* Label small */
+  .label-xs {
+    @apply text-[10px] font-semibold uppercase tracking-widest text-stone-400;
+  }
+
+  /* Scrollbar hide */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* === Warm background meshes === */
+.bg-hero {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% -5%, rgba(251, 191, 36, 0.15) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 15%, rgba(249, 115, 22, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 50% 110%, rgba(251, 146, 60, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, #fbf8f3 0%, #fff7ed 100%);
+}
+
+.bg-canvas {
+  background:
+    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(251, 191, 36, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #fbf8f3 0%, #fff7ed 100%);
+}
+
+.bg-insights {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(251, 191, 36, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, #fffbeb 0%, #fff7ed 100%);
+}
+
+.bg-doctor {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -5%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #f0fdf4 0%, #fbf8f3 100%);
+}
+
+.bg-risk {
+  background:
+    radial-gradient(ellipse 100% 50% at 50% 0%, rgba(249, 115, 22, 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+.bg-loop {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(249, 115, 22, 0.06) 0%, transparent 60%),
+    linear-gradient(180deg, #fbf8f3 0%, #f0fdf4 100%);
+}
+
+/* Grain texture */
+.grain {
+  background-image: radial-gradient(
+    rgba(15, 23, 42, 0.03) 1px,
+    transparent 1px
+  );
+  background-size: 3px 3px;
+}
+
+/* Warm floating orbs */
+.orb-warm {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.2) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.orb-orange {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}

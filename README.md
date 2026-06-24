@@ -35,7 +35,7 @@
 
 小安不只是一个健康管理 APP，而是一位有温度、有记忆、会主动关心你的 AI 伙伴。
 
-![小安 Mascot](https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20round%20blue%20robot%20mascot%20with%20heart%20antenna%20kawaii%20style%20white%20background&image_size=square_hd)
+![小安 Mascot](./public/xiaoan-mascot.svg)
 
 - 💙 **圆滚滚的蓝色机器人宠物**：心形天线、爱心胸口徽章、软萌表情
 - 😊 **多种情绪表情**：开心、眨眼、好奇、困倦、喜爱

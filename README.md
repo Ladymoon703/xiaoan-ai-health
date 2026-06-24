@@ -1,57 +1,215 @@
-# React + TypeScript + Vite
+# 小安 · XiaoAn
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 面向帕金森患者的 AI 陪伴式健康管家
 
-Currently, two official plugins are available:
+**医院看到病情，小安看见生活。**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+小安是一款面向帕金森患者的 AI 陪伴式健康管理系统，通过持续陪伴、主动提醒、健康分析和家庭协同，帮助患者、家属与医生共同管理医院之外的每一天。
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ 在线体验
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+> **Demo 地址**：[https://xiaoan-ai-health.vercel.app](https://xiaoan-ai-health.vercel.app)
+
+---
+
+## 🌱 项目背景
+
+帕金森患者的健康管理并不只发生在医院。
+
+医生能够看到复诊记录，却难以了解患者在日常生活中的真实状态：
+
+- 是否按时服药
+- 是否出现震颤加重
+- 是否存在睡眠问题
+- 是否出现情绪波动
+- 步态是否在悄悄变化
+- 药效波动是否影响了生活质量
+
+小安希望成为一位**持续陪伴在患者身边的 AI 伙伴**，让诊室之外的每一天被记录、被理解、被关心。
+
+---
+
+## 🤖 小安是谁
+
+小安不只是一个健康管理 APP，而是一位有温度、有记忆、会主动关心你的 AI 伙伴。
+
+![小安 Mascot](https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20round%20blue%20robot%20mascot%20with%20heart%20antenna%20kawaii%20style%20white%20background&image_size=square_hd)
+
+- 💙 **圆滚滚的蓝色机器人宠物**：心形天线、爱心胸口徽章、软萌表情
+- 😊 **多种情绪表情**：开心、眨眼、好奇、困倦、喜爱
+- 💭 **会眨眼、会呼吸、会心跳**：内置动画让小安"活"起来
+- 📝 **有长期记忆**：记住你说过的每一件事，串联趋势分析
+
+---
+
+## 🎯 核心功能
+
+### 🤝 AI 健康陪伴
+- 自然语言对话交流
+- 情绪支持与心理陪伴
+- 个性化健康建议
+- **长期记忆能力**：记住患者的习惯、喜好、过往感受
+- 主动关心（不只是被动回答问题）
+
+### 💊 用药提醒
+- 温柔的主动服药提醒
+- 完整的用药记录管理
+- 服药依从性分析
+- 漏服自动补服提醒
+- 多药物多时段管理
+
+### 📊 AI 健康洞察
+- AI 生成每日健康日报
+- 7 天 / 30 天趋势分析
+- 睡眠变化趋势追踪
+- 震颤频率变化监测
+- **关联模式发现**：睡眠 ↔ 震颤、情绪 ↔ 运动、服药 ↔ 稳定度
+- 智能风险预警
+
+### 👨‍👩‍👧 家属协同
+- 远程实时查看患者状态
+- 接收异常事件推送提醒
+- 查看长期健康趋势
+- 每周自动家庭周报
+- 一键语音通话
+
+### 👨‍⚕️ 医生观察
+- AI 自动生成病情摘要
+- 完整服药记录查询
+- 30 天健康趋势图
+- 震颤变化分析
+- 异常事件时间线
+- 患者自述记录（通过对话采集）
+- 一键导出复诊报告 PDF
+
+### ⚠️ 风险预警中心
+- **跌倒风险**评估与预警
+- **漏服药风险**监测
+- **睡眠异常风险**识别
+- **震颤加重风险**趋势分析
+- AI 解释风险原因与关联
+- 分级干预建议（患者 / 家属 / 医生）
+
+---
+
+## 🔄 产品闭环
+
+小安构建了一个完整的 AI 守护网络，从感知到行动，形成闭环：
+
+```
+    患者
+     ↓ （状态数据：步态、震颤、睡眠、情绪、用药）
+  小安感知
+     ↓ （实时记录 + 对话采集 + 传感器数据）
+   AI 分析
+     ↓ （DeepSeek-Pro 模型 · 整合 30 天历史数据 · 识别模式与异常）
+  风险识别
+     ↓ （实时风险评分 · 跌倒/睡眠/震颤/用药四维评估）
+  家属提醒
+     ↓ （推送通知 · 语音电话 · 每周摘要）
+  医生参考
+     ↓ （复诊报告 · 趋势摘要 · 快速掌握院外状态）
+    患者 ←（回到患者身边，持续守护）
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📱 页面一览
 
-export default tseslint.config({
-  extends: [
-    // other configs...
-    // Enable lint rules for React
-    reactX.configs['recommended-typescript'],
-    // Enable lint rules for React DOM
-    reactDom.configs.recommended,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+| 页面 | 路径 | 说明 |
+|:---|:---|:---|
+| 🏠 首页 | `/` | 故事驱动首页，王阿姨用户故事，AI 能力介绍 |
+| 🧠 AI 洞察 | `/insights` | 健康日报、睡眠/震颤趋势、服药分析、模式发现 |
+| 📋 我的主页 | `/dashboard` | 用药完成度、状态稳定度、7天趋势、AI建议 |
+| 💬 与小安对话 | `/chat` | AI 对话、长期记忆、情绪陪伴、健康建议 |
+| 👨‍⚕️ 医生观察 | `/doctor` | 30天趋势、服药记录、异常事件、AI病情摘要 |
+| ⚠️ 风险预警 | `/risks` | 四维风险评分、事件时间线、干预建议 |
+| 🔄 产品闭环 | `/loop` | 守护闭环流程图、数据流、三方视角 |
+| 👨‍👩‍👧 家属监护 | `/family` | 患者状态、连续稳定天数、异常提醒、家庭团队 |
+
+---
+
+## 🛠 技术栈
+
+### 前端
+- ⚛️ **React 18** + **TypeScript**
+- ⚡ **Vite** 构建工具
+- 🎨 **Tailwind CSS** 样式系统
+- 📊 **Recharts** 数据可视化
+- 🧭 **React Router** 路由管理
+- 🐻 **Zustand** 状态管理
+- 🎯 **Lucide React** 图标库
+
+### 设计
+- 🍎 Apple Health 风格 + 小红书科技质感
+- 🌅 暖橙温暖配色 + 治愈系视觉
+- ✨ 玻璃拟态卡片 + 微动画
+- 🤖 纯 SVG 绘制机器人 Mascot
+
+### AI （Demo 模拟）
+- 🧠 **DeepSeek-Pro** 大语言模型
+- 🤖 **AI Agent** 工作流（主动感知 → 分析 → 预警 → 协同）
+- 💭 **长期记忆** 机制（Demo 模拟）
+- 📈 **多维度健康洞察** 自动生成
+
+### 部署
+- ▲ **Vercel** 一键部署
+
+---
+
+## 🚀 快速开始
+
+```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+
+# 构建生产版本
+npm run build
+
+# 预览生产构建
+npm run preview
 ```
+
+---
+
+## ✨ 项目亮点
+
+1. **从"用户主动访问系统"转向"系统持续陪伴用户"**
+   - 不只是工具，是伙伴。主动提醒、主动关心、主动发现问题。
+
+2. **聚焦帕金森患者长期健康管理场景**
+   - 深入理解疾病特点：震颤、步态、睡眠、情绪、药效波动
+   - 专门设计的健康指标和分析维度
+
+3. **强调患者、家属与医生三方协同**
+   - 患者端：温暖陪伴
+   - 家属端：安心监护
+   - 医生端：高效参考
+
+4. **探索具身智能与 AI Agent 在医疗健康领域的应用**
+   - 可感知、会思考、能行动、有记忆
+   - 端到端的守护闭环
+
+5. **温暖治愈的产品设计**
+   - 可爱的机器人形象降低心理门槛
+   - 暖橙配色传递关怀与温度
+   - 从语言到视觉，处处体现"陪伴感"
+
+---
+
+## 👩‍💻 作者
+
+**郝悦**
+
+吉林大学 · 网络空间安全专业
+
+AI Product & AI Agent Enthusiast
+
+---
+
+> 💛 *用科技，让每一个被疾病困扰的日子，都多一份温暖与安心。*
